@@ -1,19 +1,19 @@
-
-function countLanguages(list) {
-    let count = {};
-    for (let x = 0; x < list.length; x++) {
-      let currentCount = count[list[x].language] === undefined ? 0 : count[list[x].language];
-      // let currentCount = count[i.language] || 0;
-      count[list[x].language] = currentCount + 1;
+function getCount(str) {
+  //debugger
+  let vowelsCount = 0;
+  let num = ['e', 'u', 'i', 'o', 'a'];
+  let arr = str.split('');
+  for (let elem of arr){
+    for (let i = 0; i<=arr.length; i++){
+      if(elem == num[i]){
+        vowelsCount++;
+        console.log(elem, num[i]);
+      } 
     }
-    return count;
   }
+  //return vowelsCount;
+  console.log(vowelsCount);
+}
 
-const list1 = [
-    { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
-    { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
-    { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
-    { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
-];
+getCount("abracadabra");
 
-countLanguages(list1);
